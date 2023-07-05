@@ -1,8 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ['League Spartan', ...defaultTheme.fontFamily.sans],
+            },
+            rotate: {
+                17: '360deg',
+            },
+            colors: {
+                primaryCyan: 'hsl(180, 29%, 50%)',
+                bgWhite: 'hsl(180, 52%, 96%)',
+                bgCard: 'hsl(180, 31%, 95%)',
+                secondaryCyan: 'hsl(180, 8%, 52%)',
+                darkCyan: 'hsl(180, 14%, 20%)',
+                bgBadge: '#a9d1d538',
+            },
+        },
     },
     plugins: [],
 };
