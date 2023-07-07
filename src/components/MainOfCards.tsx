@@ -2,7 +2,7 @@ import CardFilterts from './CardFilterts';
 import ListOfCards from './ListOfCards';
 import { useState } from 'react';
 const MainOfCards = () => {
-    const [filtersActived, setFiltersActived] = useState(true);
+    const [filtersActived] = useState(true);
     return (
         <>
             {filtersActived && <CardFilterts />}

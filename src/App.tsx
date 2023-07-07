@@ -1,5 +1,3 @@
-import CardFilterts from './components/CardFilterts';
-import ListOfCards from './components/ListOfCards';
 import MainOfCards from './components/MainOfCards';
 
 function App() {
