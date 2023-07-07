@@ -5,8 +5,8 @@ const TENCOLOGIAS = ['Frontend', 'CSS', 'JavaScript'];
 
 const CardFilterts = () => {
     return (
-        <header className=" w-full">
-            <article className="absolute top-[110px] mx-10 flex w-[80%] justify-between rounded-lg bg-bgCard shadow-2xl  shadow-cyan-900 lg:mx-16  xl:w-[90%]">
+        <header className="absolute top-[110px] w-full px-10 lg:px-32 ">
+            <article className="    flex  w-full justify-between rounded-lg bg-bgWhite shadow-3xl  shadow-cyan-900   ">
                 <div className="flex w-[100%] flex-wrap gap-6 p-6 ">
                     {TENCOLOGIAS.map((t) => (
                         <div
