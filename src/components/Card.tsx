@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Badge from './Badge';
 import { Vacancy } from '../interface/Vacancy';
+import { useFiltersContext } from '../context/useFiltersContext';
 
 interface Props {
     vacancy: Vacancy;
@@ -8,7 +9,7 @@ interface Props {
 
 const Card = ({ vacancy }: Props) => {
     const [select, setSelect] = useState(false);
-
+    const { addFilter } = useFiltersContext();
     const handleSelect = () => {
         setSelect(!select);
     };
@@ -66,11 +67,12 @@ const Card = ({ vacancy }: Props) => {
                 </div>
             </div>
             <span className="my-4 flex h-[1px] w-full bg-secondaryCyan lg:hidden"></span>
-            <div className="flex gap-3  pb-2 lg:ml-auto">
+            <div className="flex flex-wrap gap-3  pb-2 lg:ml-auto">
                 {badges.map((p) => (
                     <button
                         key={p.toString()}
                         className="overflow-hidden "
+                        onClick={() => addFilter(p)}
                     >
                         <Badge tecnology={p.toString()} />
                     </button>

@@ -9,10 +9,10 @@ import img8 from '../images/insure.svg';
 import img9 from '../images/eyecam-co.svg';
 import img10 from '../images/the-air-filter-company.svg';
 
-type Role = 'Frontend' | 'Backend' | 'Fullstack';
-type Level = 'Junior' | 'Midweight' | 'Senior';
-type Lenguages = 'HTML' | 'CSS' | 'Python' | 'Ruby' | 'JavaScript';
-type Tools = 'React' | 'Sass' | 'Vue' | 'Django' | 'RoR' | 'Ruby' | '';
+export type Role = 'Frontend' | 'Backend' | 'Fullstack';
+export type Level = 'Junior' | 'Midweight' | 'Senior';
+export type Lenguages = 'HTML' | 'CSS' | 'Python' | 'Ruby' | 'JavaScript';
+export type Tools = 'React' | 'Sass' | 'Vue' | 'Django' | 'RoR' | 'Ruby' | '';
 // type Badges = Role | Level | Lenguages | Tools;
 
 export interface Vacancy {
