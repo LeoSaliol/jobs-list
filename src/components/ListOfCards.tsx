@@ -1,10 +1,13 @@
 import Card from './Card';
-import { vacancys } from '../interface/Vacancy';
+
+import { useFiltersContext } from '../context/useFiltersContext';
 
 const ListOfCards = () => {
+    const { filterJobs } = useFiltersContext();
+
     return (
         <>
-            {vacancys.map((vacancy) => (
+            {filterJobs.map((vacancy) => (
                 <div key={vacancy.id}>
                     <Card vacancy={vacancy} />
                 </div>

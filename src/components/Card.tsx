@@ -9,6 +9,8 @@ interface Props {
 
 const Card = ({ vacancy }: Props) => {
     const [select, setSelect] = useState(false);
+    const [selectBagde, setSelectBagde] = useState(false);
+
     const { addFilter } = useFiltersContext();
     const handleSelect = () => {
         setSelect(!select);
@@ -72,7 +74,10 @@ const Card = ({ vacancy }: Props) => {
                     <button
                         key={p.toString()}
                         className="overflow-hidden "
-                        onClick={() => addFilter(p)}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            addFilter(p);
+                        }}
                     >
                         <Badge tecnology={p.toString()} />
                     </button>
