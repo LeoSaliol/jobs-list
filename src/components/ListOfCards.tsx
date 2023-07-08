@@ -1,12 +1,14 @@
 import Card from './Card';
+import { vacancys } from '../interface/Vacancy';
 
 const ListOfCards = () => {
     return (
         <>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {vacancys.map((vacancy) => (
+                <div key={vacancy.id}>
+                    <Card vacancy={vacancy} />
+                </div>
+            ))}
         </>
     );
 };
