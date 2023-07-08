@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Badge from './Badge';
-
+import ofertas from '../data/data.json';
+import imgNose from '../images/photosnap.svg';
 const Card = () => {
     const [select, setSelect] = useState(false);
 
@@ -17,7 +18,7 @@ const Card = () => {
             <div className="lg:flex lg:items-center">
                 <figure className="absolute top-[-10%] z-10 w-[50px] lg:static lg:w-[110px]">
                     <img
-                        src="../src/images/photosnap.svg"
+                        src={imgNose}
                         alt="Imagen del Logo"
                     />
                 </figure>
