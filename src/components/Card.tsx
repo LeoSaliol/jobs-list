@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Badge from './Badge';
-import ofertas from '../data/data.json';
+
 import imgNose from '../images/photosnap.svg';
 const Card = () => {
     const [select, setSelect] = useState(false);
