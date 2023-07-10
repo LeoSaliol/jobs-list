@@ -8,4 +8,4 @@
 
 ## Skills used in the project
 
--   React // TypeScript // Tailwinds
+-   React // TypeScript // Tailwinds // Context API
