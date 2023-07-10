@@ -1,4 +1,5 @@
 import BgFigures from './components/BgFigures';
+import Footer from './components/Footer';
 import MainOfCards from './components/MainOfCards';
 import { FiltersContextProvider } from './context/filtersContext';
 
@@ -7,6 +8,7 @@ function App() {
         <FiltersContextProvider>
             <BgFigures />
             <MainOfCards />
+            <Footer />
         </FiltersContextProvider>
     );
 }
