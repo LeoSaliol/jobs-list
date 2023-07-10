@@ -9,9 +9,8 @@ interface Props {
 
 const Card = ({ vacancy }: Props) => {
     const [select, setSelect] = useState(false);
-    const [selectBagde, setSelectBagde] = useState(false);
 
-    const { addFilter } = useFiltersContext();
+    const { addFilter, selectBagde } = useFiltersContext();
     const handleSelect = () => {
         setSelect(!select);
     };
@@ -37,7 +36,7 @@ const Card = ({ vacancy }: Props) => {
                 </figure>
 
                 <div>
-                    <div className="mt-6  flex w-full items-center gap-8 lg:mt-0  ">
+                    <div className="mt-6  flex w-full flex-wrap items-center gap-8 lg:mt-0  ">
                         <p className="text-[1.02em] font-bold text-primaryCyan lg:pb-1">
                             {vacancy.company}
                         </p>
@@ -55,7 +54,7 @@ const Card = ({ vacancy }: Props) => {
                             )}
                         </div>
                     </div>
-                    <h1 className="my-4  text-[1.05em] font-bold lg:my-2 ">
+                    <h1 className="my-4  text-[1.05em] font-bold hover:text-primaryCyan lg:my-2 ">
                         {vacancy.position}
                     </h1>
                     <div className="flex gap-3 font-semibold text-secondaryCyan">
@@ -69,11 +68,15 @@ const Card = ({ vacancy }: Props) => {
                 </div>
             </div>
             <span className="my-4 flex h-[1px] w-full bg-secondaryCyan lg:hidden"></span>
-            <div className="flex flex-wrap gap-3  pb-2 lg:ml-auto">
+            <div className="flex flex-wrap items-center gap-3  overflow-hidden  pb-2 lg:ml-auto">
                 {badges.map((p) => (
                     <button
                         key={p.toString()}
-                        className="overflow-hidden "
+                        className={` rounded-md bg-bgBadge     ${
+                            selectBagde.includes(p.toString())
+                                ? ' bg-primaryCyan text-bgCard '
+                                : 'text-primaryCyan'
+                        } `}
                         onClick={(e) => {
                             e.stopPropagation();
                             addFilter(p);

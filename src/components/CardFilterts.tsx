@@ -9,17 +9,17 @@ const CardFilterts = () => {
     return (
         <>
             {filterActived.length > 0 && (
-                <header className="absolute top-[110px] w-full px-10 lg:px-32 ">
-                    <article className="    flex  w-full justify-between rounded-lg bg-bgWhite shadow-3xl  shadow-cyan-900   ">
-                        <div className="flex w-[100%] flex-wrap gap-6 p-6 ">
+                <header className="relative top-[-70px] w-full px-10  lg:px-32  xl:top-[-45px]">
+                    <article className="  flex  w-full   justify-between rounded-lg bg-bgWhite shadow-3xl     ">
+                        <div className="flex w-full flex-wrap gap-6 p-6 ">
                             {filterActived.map((t) => (
                                 <div
                                     key={t}
-                                    className="flex h-[35px] items-center justify-between    overflow-hidden   rounded-lg bg-bgBadge"
+                                    className="flex h-[35px] items-center justify-between    overflow-hidden  rounded-lg bg-bgBadge text-primaryCyan"
                                 >
                                     <Badge tecnology={t} />
-                                    <div
-                                        className="flex h-full cursor-pointer  items-center justify-center bg-primaryCyan "
+                                    <button
+                                        className="flex h-full w-[34px] items-center justify-center bg-primaryCyan hover:bg-darkCyan  "
                                         onClick={() => deleteFilter(t)}
                                     >
                                         <RemoveIcon
@@ -27,12 +27,12 @@ const CardFilterts = () => {
                                             height={23}
                                             fill="hsl(180, 31%, 95%)"
                                         />
-                                    </div>
+                                    </button>
                                 </div>
                             ))}
                         </div>
                         <button
-                            className="w-[25%] text-start text-[1.3em] font-bold tracking-wide text-secondaryCyan md:text-center "
+                            className="w-[25%] pr-4 text-start text-[1.3em] font-bold tracking-wide text-secondaryCyan md:pr-0 md:text-center xl:pr-7 xl:text-end "
                             onClick={() => deleteAllFilter()}
                         >
                             Clear
@@ -44,21 +44,3 @@ const CardFilterts = () => {
     );
 };
 export default CardFilterts;
-
-// {
-//     TENCOLOGIAS.map((t) => (
-//         <div
-//             key={t}
-//             className="flex h-[35px] items-center justify-between   gap-2  overflow-hidden rounded-lg bg-bgBadge"
-//         >
-//             <p className="mx-2 text-[1.1em] font-bold text-primaryCyan">{t}</p>
-//             <div className="flex h-full cursor-pointer  items-center justify-center bg-primaryCyan">
-//                 <RemoveIcon
-//                     width={25}
-//                     height={25}
-//                     fill="hsl(180, 31%, 95%)"
-//                 />
-//             </div>
-//         </div>
-//     ));
-// }

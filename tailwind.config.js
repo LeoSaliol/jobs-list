@@ -21,7 +21,7 @@ export default {
             },
             boxShadow: {
                 '3xl': ' 0px 10px 16px -7px hsl(180, 29%, 50%)',
-                '4xl': '  2px 0px 25px -3px hsl(180, 8%, 52%)',
+                '4xl': '  0px 10px 20px -7px hsl(180, 29%, 50%)',
             },
         },
     },

@@ -12,6 +12,8 @@ type ContextProps = {
     jobs: Vacancy[];
     filterJobs: Vacancy[];
     filterActived: BagdeType[];
+    selectBagde: string[];
+    setSelectBagde: React.Dispatch<React.SetStateAction<string[]>>;
     setFilterActived: React.Dispatch<React.SetStateAction<BagdeType[]>>;
     addFilter: (badge: BagdeType) => void;
     deleteFilter: (badge: BagdeType) => void;
@@ -23,11 +25,14 @@ const Context = createContext<ContextProps | undefined>(undefined);
 export function FiltersContextProvider({ children }: Props) {
     const [filterActived, setFilterActived] = useState<BagdeType[]>([]);
     const [jobs] = useState<Vacancy[]>(vacancys);
-    const [filterJobs, filterSetJobs] = useState(jobs);
+    const [filterJobs, setFilterJobs] = useState(jobs);
+
+    const [selectBagde, setSelectBagde] = useState<string[]>([]);
 
     useEffect(() => {
         if (filterActived.length === 0) {
-            filterSetJobs(jobs);
+            setFilterJobs(jobs);
+            setSelectBagde([...filterActived]);
         } else {
             const filter = jobs.filter((job) => {
                 const badges = [
@@ -38,7 +43,9 @@ export function FiltersContextProvider({ children }: Props) {
                 ];
                 return filterActived.every((f) => badges.includes(f));
             });
-            filterSetJobs(filter);
+
+            setSelectBagde([...filterActived]);
+            setFilterJobs(filter);
         }
     }, [filterActived, jobs]);
 
@@ -62,6 +69,8 @@ export function FiltersContextProvider({ children }: Props) {
         addFilter,
         deleteFilter,
         deleteAllFilter,
+        selectBagde,
+        setSelectBagde,
     };
     return <Context.Provider value={value}>{children}</Context.Provider>;
 }

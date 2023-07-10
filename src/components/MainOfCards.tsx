@@ -11,7 +11,7 @@ const MainOfCards = () => {
 
             <main
                 className={`mx-10 mb-16  flex flex-col gap-14 lg:mx-32 ${
-                    filterActived.length > 0 ? 'mt-24' : 'mt-12'
+                    filterActived.length > 0 ? '' : 'mt-12'
                 } `}
             >
                 <ListOfCards />

@@ -4,10 +4,8 @@ interface Props {
 
 const Badge = ({ tecnology }: Props) => {
     return (
-        <div className="flex h-[35px] items-center justify-between rounded-xl bg-bgBadge">
-            <p className="mx-3 text-[1em] font-bold text-primaryCyan">
-                {tecnology}
-            </p>
+        <div className="flex h-[35px] items-center justify-between rounded-md   ">
+            <p className="mx-3 text-[1em] font-bold  ">{tecnology}</p>
         </div>
     );
 };
