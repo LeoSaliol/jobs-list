@@ -2,7 +2,7 @@ import { useFiltersContext } from '../context/useFiltersContext';
 import CardFilterts from './CardFilterts';
 import ListOfCards from './ListOfCards';
 
-const MainOfCards = () => {
+const MainOfCards: React.FC = () => {
     const { filterActived } = useFiltersContext();
 
     return (

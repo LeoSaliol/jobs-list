@@ -2,7 +2,7 @@ import { useFiltersContext } from '../context/useFiltersContext';
 import RemoveIcon from '../icons/RemoveIcon';
 import Badge from './Badge';
 
-const CardFilterts = () => {
+const CardFilterts: React.FC = () => {
     const { deleteFilter, filterActived, deleteAllFilter } =
         useFiltersContext();
 

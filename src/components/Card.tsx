@@ -7,7 +7,7 @@ interface Props {
     vacancy: Vacancy;
 }
 
-const Card = ({ vacancy }: Props) => {
+const Card: React.FC<Props> = ({ vacancy }) => {
     const [select, setSelect] = useState(false);
 
     const { addFilter, selectBagde } = useFiltersContext();

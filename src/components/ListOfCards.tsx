@@ -2,7 +2,7 @@ import Card from './Card';
 
 import { useFiltersContext } from '../context/useFiltersContext';
 
-const ListOfCards = () => {
+const ListOfCards: React.FC = () => {
     const { filterJobs } = useFiltersContext();
 
     return (
