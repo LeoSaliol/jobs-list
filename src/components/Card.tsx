@@ -22,7 +22,7 @@ const Card: React.FC<Props> = ({ vacancy }) => {
     ];
     return (
         <article
-            className={` relative z-0 w-full cursor-pointer rounded-lg ${
+            className={` relative z-0 w-full cursor-pointer rounded-lg transition-all duration-200 hover:scale-[1.01] ${
                 select ? ' border-s-8 border-primaryCyan' : ''
             }  px-6 py-4 shadow-4xl lg:flex `}
             onClick={handleSelect}
